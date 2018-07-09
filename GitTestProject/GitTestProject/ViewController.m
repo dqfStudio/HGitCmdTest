@@ -39,4 +39,8 @@
     
 }
 
+- (void)testEvent2 {
+    
+}
+
 @end
