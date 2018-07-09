@@ -29,6 +29,9 @@
 }
 
 - (void)masterTest {
+
+}
+- (void)testAction {
     
 }
 
