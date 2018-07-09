@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //branch 1 在这里留下脚印
+    //branch 2 在这里留下脚印
     //branch 1 再次在这里留下脚印
 }
 
