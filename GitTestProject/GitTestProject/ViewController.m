@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-
+//master 在此添加些注释信息
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
