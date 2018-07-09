@@ -40,6 +40,9 @@
 }
 
 - (void)testEvent2 {
+
+}
+- (void)branch2Test {
     
 }
 
