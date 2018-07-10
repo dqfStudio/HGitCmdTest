@@ -46,5 +46,8 @@
 - (void)branch2Test {
     
 }
+- (void)branch4Test {
+    
+}
 
 @end
