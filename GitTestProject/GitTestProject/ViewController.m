@@ -34,6 +34,9 @@
 - (void)masterTest {
 
 }
+- (void)masterTest2 {
+    
+}
 - (void)testAction {
     
 }
