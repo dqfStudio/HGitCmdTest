@@ -1,0 +1,67 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+#platform :ios do
+
+  #desc "Push a new release build to the App Store"
+  desc "Create a new release build"
+  lane :releasePackage do
+    get_certificates(           # invokes cert
+  	output_path: "./fastlane/provision/release/",
+  	filename: "Distribution_Certificate.cer"
+    )
+    get_provisioning_profile(   # invokes sigh
+  	output_path: "./fastlane/provision/release/",
+  	filename: "GitTestProject_Distribution.mobileprovision"
+    )
+  update_project_provisioning(
+  	#xcodeproj: "Project.xcodeproj",
+	profile: "./fastlane/provision/release/GitTestProject_Distribution.mobileprovision",
+	build_configuration: "Release",
+	certificate: "/tmp/Distribution_Certificate.cer",
+	#code_signing_identity: "iPhone Distribution: qingfeng deng (Q65W64YB94)" # optionally specify the codesigning identity
+    )
+    build_app(scheme: "GitTestProject",
+              output_directory: "./fastlane/build/release/")
+    #upload_to_app_store
+  end
+
+
+
+
+  desc "Create a new debug build"
+  lane :debugPackage do
+    get_certificates(           # invokes cert
+  	output_path: "./fastlane/provision/debug/",
+  	filename: "Development_Certificate.cer"
+    )
+    get_provisioning_profile(   # invokes sigh
+  	output_path: "./fastlane/provision/debug/",
+  	filename: "GitTestProject_Development.mobileprovision"
+    )
+  update_project_provisioning(
+  	#xcodeproj: "Project.xcodeproj",
+	profile: "./fastlane/provision/debug/GitTestProject_Development.mobileprovision",
+	build_configuration: "Debug",
+	certificate: "/tmp/Development_Certificate.cer",
+	#code_signing_identity: "iPhone Distribution: qingfeng deng (Q65W64YB94)" # optionally specify the codesigning identity
+    )
+    build_app(scheme: "GitTestProject",
+              output_directory: "./fastlane/build/debug/")
+    #upload_to_app_store
+  end
+#end
