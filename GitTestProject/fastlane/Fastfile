@@ -22,7 +22,7 @@ default_platform(:ios)
   lane :releasePackage do
     get_certificates(           # invokes cert
   	output_path: "./fastlane/provision/release/",
-  	filename: "Certificate.cer"
+  	filename: "Distribution_Certificate.cer"
     )
     get_provisioning_profile(   # invokes sigh
   	output_path: "./fastlane/provision/release/",
@@ -32,7 +32,7 @@ default_platform(:ios)
   	#xcodeproj: "Project.xcodeproj",
 	profile: "./fastlane/provision/release/GitTestProject_Distribution.mobileprovision",
 	build_configuration: "Release",
-	certificate: "/tmp/Certificate.cer",
+	certificate: "/tmp/Distribution_Certificate.cer",
 	#code_signing_identity: "iPhone Distribution: qingfeng deng (Q65W64YB94)" # optionally specify the codesigning identity
     )
     build_app(scheme: "GitTestProject",
@@ -47,7 +47,7 @@ default_platform(:ios)
   lane :debugPackage do
     get_certificates(           # invokes cert
   	output_path: "./fastlane/provision/debug/",
-  	filename: "Certificate.cer"
+  	filename: "Development_Certificate.cer"
     )
     get_provisioning_profile(   # invokes sigh
   	output_path: "./fastlane/provision/debug/",
@@ -57,7 +57,7 @@ default_platform(:ios)
   	#xcodeproj: "Project.xcodeproj",
 	profile: "./fastlane/provision/debug/GitTestProject_Development.mobileprovision",
 	build_configuration: "Debug",
-	certificate: "/tmp/Certificate.cer",
+	certificate: "/tmp/Development_Certificate.cer",
 	#code_signing_identity: "iPhone Distribution: qingfeng deng (Q65W64YB94)" # optionally specify the codesigning identity
     )
     build_app(scheme: "GitTestProject",

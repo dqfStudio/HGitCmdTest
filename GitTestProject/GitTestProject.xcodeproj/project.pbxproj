@@ -313,8 +313,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.socool.GitTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6711f2a-cfaf-487c-a028-113fac8c448f";
-				PROVISIONING_PROFILE_SPECIFIER = "com.socool.GitTestProject AppStore";
+				PROVISIONING_PROFILE = "1e9f0965-2208-4d55-b90c-d44a16739b30";
+				PROVISIONING_PROFILE_SPECIFIER = "com.socool.GitTestProject AppStore 1534923280";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
